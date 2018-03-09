@@ -11,7 +11,8 @@
         html, body {
         height:100%;
         margin:0;
-        padding:0
+        padding:0;
+        overflow-y: hidden;
         }
         #dHead {
         height:8%;
@@ -25,7 +26,7 @@
         #dBody {
         height:76%;
         width:100%;
-        top:100px;
+        top:300px;
         position:absolute;
         z-index:10;
         bottom:100px;
@@ -58,18 +59,17 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="col-xs-4"></div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-4" style="padding:0px 95px 0px 95px;">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <div class="panel-title text-center">用户登录</div>
                             </div>
-                            <div class="panel-body">
-                                
+                            <div class="panel-body" style="margin: 35px 0px 0px 0px;">
                                 <div class="input-group">
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-user"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="输入用户名">
+                                    <input type="text" class="form-control" placeholder="输入用户名" id="txtName">
                                 </div>
                                 <div>
                                     <br>
@@ -78,7 +78,7 @@
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-edit"></i>
                                     </span>
-                                    <input type="password" class="form-control" placeholder="输入密码">
+                                    <input type="password" class="form-control" placeholder="输入密码"  id="txtpassword">
                                     <span class="input-group-addon">
                                         <i class="glyphicon glyphicon-sunglasses"></i>
                                     </span>
@@ -147,30 +147,6 @@
         
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript">
-        $(function() {
-        $("#denglu").click(function(){
-        alert("原始版的对话框");
-        $("#mydialog").modal("hide"); //隐藏对话框
-        });
-        $("#btnDengLu").click(function(){
-        $("#mydialog").modal("show");
-        });
-        });
-        </script>
-        <script type="text/javascript">
-        $(function(){
-        var p=0;/*进度变量*/
-        var $p=$("#progress")
-        var timer=setInterval(function(){
-        p++;
-        if (p>99) {
-        clearInterval(timer);
-        }
-        $p.css("width",p+"%");
-        $("#pspan").html(p);
-        },100);
-        });
-        </script>
+        <script type="text/javascript" src="index.js"></script>
     </body>
 </html>

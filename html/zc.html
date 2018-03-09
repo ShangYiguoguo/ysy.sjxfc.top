@@ -38,25 +38,25 @@
                             <br>
                         </div>
                         <div class="input-group">
-                            密码：<input type="password" class="form-control" placeholder="输入1-16个字母或数字字符">
+                            密码：<input type="password" class="form-control" placeholder="输入8-16个字母或数字字符" id="txtpassword">
                         </div>
                         <div>
                             <br>
                         </div>
                         <div class="input-group">
-                            确认密码：<input type="password" class="form-control" placeholder="输入1-16个字母或数字字符">
+                            确认密码：<input type="password" class="form-control" placeholder="输入8-16个字母或数字字符" id="txtqrpassword">
                         </div>
                         <div>
                             <br>
                         </div>
                         <div class="input-group">
-                            证件号：<input type="text" class="form-control" placeholder="输入18位身份证号码">
+                            证件号：<input type="text" class="form-control" placeholder="输入18位身份证号码" id="txtzjh">
                         </div>
                         <div>
                             <br>
                         </div>
                         <div class="input-group">
-                            手机号：<input type="text" class="form-control" placeholder="输入11位手机号码">
+                            手机号：<input type="text" class="form-control" placeholder="输入11位手机号码" id="txtpeone">
                         </div>
                         <a class="btn btn-success" id="btnNext">下一步</a>
                     </div>
@@ -88,10 +88,34 @@
                     $("#btnNext").click(function() {
                         var name=$("#txtName").val();
                         if(name.length<3 || name.length>10) {
-                            alert("姓名长度不正确!");
+                            alert("姓名不合法!");
+                            $("#txtName").focus();
                             return;
                         }
-
+                        var password=$("#txtpassword").val();
+                        if(password.length<8 || password.length>16) {
+                            alert("密码不合法!");
+                            $("#txtpassword").focus();
+                            return;
+                        }
+                        var qrpassword=$("#txtqrpassword").val();
+                        if(qrpassword.length<8 || qrpassword.length>16) {
+                            alert("两次密码不一致!");
+                            $("#txtqrpassword").focus();
+                            return;
+                        }
+                        var zjh=$("#txtzjh").val();
+                        if(zjh.length<18 || zjh.length>18) {
+                            alert("身份证不正确!");
+                            $("#txtzjh").focus();
+                            return;
+                        }
+                        var peone=$("#txtpeone").val();
+                        if(peone.length<11 || peone.length>11) {
+                            alert("手机号不正确!");
+                            $("#txtpeone").focus();
+                            return;
+                        }
 
                         location="zccg.html";
                     });

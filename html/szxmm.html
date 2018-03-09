@@ -24,9 +24,9 @@
                     <div class="col-xs-4"></div>
                     <div class="col-xs-4">
                         <div class="input-group">
-                            新密码：<input type="password" class="form-control" placeholder="输入新密码">
+                            新密码：<input type="password" class="form-control" placeholder="输入新密码" id="txtpassword">
                         </div>
-                        <a href="index.html" class="btn btn-success">完成</a>
+                        <a class="btn btn-success" id="btnwancheng">完成</a>
                     </div>
                 </div>
             </div>
@@ -52,5 +52,19 @@
         
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+                $(function(){
+                    $("#btnwancheng").click(function() {
+                        var password=$("#txtpassword").val();
+                        if(password.length<8 || password.length>16) {
+                            alert("密码不合法!");
+                            return;
+                        }
+
+                        location="index.html";
+                    });
+                });
+            
+            </script>
     </body>
 </html>
